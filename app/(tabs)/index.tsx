@@ -1,3 +1,4 @@
+import FoodCategory from "@/components/FoodCategory";
 import icons from "@/constants/icons";
 import { Image, ScrollView, Text, View } from "react-native";
 
@@ -23,7 +24,7 @@ export default function Index() {
 
       {/* menu header */}
       <View className="flex flex-row justify-between items-center mt-8">
-        <Text className="text-lg font-nunito-semibold">
+        <Text className="text-lg font-nunito-extrabold">
           Moon House Menu
         </Text>
 
@@ -33,6 +34,9 @@ export default function Index() {
         </View>
       </View>
 
+      {/* food category */}
+      <FoodCategory/>
+      
     </ScrollView>
   );
 }
