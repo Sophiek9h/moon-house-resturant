@@ -1,3 +1,4 @@
+import Cards from "@/components/Cards";
 import FoodCategory from "@/components/FoodCategory";
 import icons from "@/constants/icons";
 import { Image, ScrollView, Text, View } from "react-native";
@@ -36,7 +37,12 @@ export default function Index() {
 
       {/* food category */}
       <FoodCategory/>
-      
+
+      {/* cards */}
+      <Cards/>
+
+      {/* <PopularCards/> */}
+
     </ScrollView>
   );
 }
