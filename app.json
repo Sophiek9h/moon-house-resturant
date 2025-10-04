@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Moon-house-app",
-    "slug": "Moon-house-app",
+    "name": "moon-house-app",
+    "slug": "moon-house-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,13 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sophiek9h.moonhouseapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "package": "com.sophiek9h.moonhouseapp",
       "edgeToEdgeEnabled": true
     },
     "web": {
@@ -34,7 +36,8 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true

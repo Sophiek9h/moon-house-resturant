@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import "./global.css";
 import { useFonts } from 'expo-font';
 import { Text } from "react-native";
+import { GlobalProvider } from "@/lib/global-provider";
 
 export default function RootLayout() {
 
@@ -16,10 +17,10 @@ export default function RootLayout() {
   'Nunito-SemiBold': require('../assets/fonts/Nunito-SemiBold.ttf'),
 });
 
-    if (!fontsLoaded) {
-    return <Text>Loading...</Text>; // Or SplashScreen
-  }
-  return <Stack 
-    screenOptions={{headerShown: false}}
-  />;
+  //   if (!fontsLoaded) {
+  //   return <Text>Loading...</Text>; // Or SplashScreen
+  // }
+  return  <GlobalProvider>
+      <Stack screenOptions={{ headerShown: false }} />
+    </GlobalProvider>;
 }

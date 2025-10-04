@@ -17,6 +17,7 @@ import soup from "@/assets/icons/soup.png"
 import star from "@/assets/icons/star.png"
 import tea from "@/assets/icons/tea.png"
 import user from "@/assets/icons/User.png"
+import google from "@/assets/icons/google.png"
 
 
 export default {
@@ -38,5 +39,6 @@ export default {
     soup,
     star,
     tea,
-    user
+    user,
+    google
 };
