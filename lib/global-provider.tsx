@@ -35,8 +35,8 @@ export const GlobalProvider = ({ children }: ProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
-    clientId: "995336070306-2b3u9um7bepnpjd9om98bmr2iak2cdkt.apps.googleusercontent.com",
-    iosClientId: "995336070306-3jdcjqnj469ggao1b0ifh2h81bn9dma0.apps.googleusercontent.com",
+    clientId: process.env.EXPO_PUBLIC_GOOGLE_CLIENT_ID,
+    iosClientId: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
   });
 
   useEffect(() => {
