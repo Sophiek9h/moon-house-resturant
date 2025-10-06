@@ -14,7 +14,10 @@ module.exports = {
         "nunito-extrabold": ["Nunito-ExtraBold"],
         "nunito-italic": ["Nunito-Italic"],
       },
+      colors: {
+        primaryRed: "#D50000",
     },
+  }
   },
   plugins: [],
 }

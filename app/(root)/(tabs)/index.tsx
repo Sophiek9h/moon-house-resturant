@@ -2,10 +2,26 @@ import { Cards, PopularCards } from "@/components/Cards";
 import FoodCategory from "@/components/FoodCategory";
 import { menueItems } from "@/constants/data";
 import icons from "@/constants/icons";
+import { useGlobalContext } from "@/lib/global-provider";
 import { FlatList, Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
+
+  const {user} = useGlobalContext();
+
+  const getGreeting = () => {
+  const hour = new Date().getHours();
+  
+    if (hour < 12) {
+      return 'Good Morning';
+    } else if (hour < 18) {
+      return 'Good Afternoon';
+    } else {
+      return 'Good Evening';
+    }
+  };
+
   return (
     <SafeAreaView className="mx-6 mt-6">
       <FlatList
@@ -17,10 +33,11 @@ export default function Index() {
         ListHeaderComponent={
           <>
             {/* welcome header */}
+            {user && ( 
             <View className="flex flex-row justify-between items-center">
               <View className="flex flex-col ">
                 <Text className="font-nunito-bold text-2xl">
-                  Good Morning Sophia
+                  {getGreeting()} {user.displayName?.split(' ')[1]|| 'User'}
                 </Text>
                 <Text className="text-base font-nunito-light mt-1">
                   Check out today’s Menu
@@ -32,6 +49,7 @@ export default function Index() {
                 <Image source={icons.bell} className="size-5" />
               </View>
             </View>
+            )}
 
             {/* menu header */}
             <View className="flex flex-row justify-between items-center mt-5">

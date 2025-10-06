@@ -5,26 +5,31 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { router, useLocalSearchParams } from "expo-router";
 import { categories } from "@/constants/data";
 
 const FoodCategory = () => {
   const params = useLocalSearchParams<{ filter?: string }>();
   const [selectedCategory, setSelectedCategory] = useState(
-    params.filter || "Desserts"
-  );
+  params.filter || "All"
+);
 
-  const handleCategory = (category: string) => {
-    if (selectedCategory === category) {
-      setSelectedCategory("Desserts");
-      router.setParams({ filter: "Desserts" });
-      return;
-    } else {
-      setSelectedCategory(category);
-      router.setParams({ filter: category });
-    }
-  };
+useEffect(() => {
+  if (!params.filter) {
+    setSelectedCategory("All");
+  }
+}, [params.filter]);
+
+const handleCategory = (category: string) => {
+  if (selectedCategory === category && category !== "All") {
+    setSelectedCategory("All");
+    router.setParams({ filter: "All" });
+  } else {
+    setSelectedCategory(category);
+    router.setParams({ filter: category });
+  }
+};
 
   // Ensure selected category always comes first
   const sortedCategories = useMemo(() => {
@@ -46,7 +51,7 @@ const FoodCategory = () => {
             key={index}
             onPress={() => handleCategory(items.category)}
             className={`flex flex-row gap-2 mr-3 px-5 py-4 rounded-full font-nunito ${
-              selectedCategory === items.category ? "bg-red-700" : "bg-red-100"
+              selectedCategory === items.category ? "bg-primaryRed" : "bg-red-100"
             }`}
           >
             {/* Show icon if available */}

@@ -18,6 +18,8 @@ import star from "@/assets/icons/star.png"
 import tea from "@/assets/icons/tea.png"
 import user from "@/assets/icons/User.png"
 import google from "@/assets/icons/google.png"
+import redHeart from "@/assets/icons/Heart-red.png"
+import clock from "@/assets/icons/Clock.png"
 
 
 export default {
@@ -40,5 +42,7 @@ export default {
     star,
     tea,
     user,
-    google
+    google,
+    redHeart,
+    clock
 };
