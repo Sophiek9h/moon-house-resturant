@@ -1,3 +1,4 @@
+import { CartProvider } from "@/lib/cart-provider";
 import { useGlobalContext } from "@/lib/global-provider";
 import { Redirect, Slot } from "expo-router";
 import { ActivityIndicator } from "react-native";
@@ -18,5 +19,9 @@ export default function AppLayout(){
         return <Redirect href="/sing-in" />
     }
 
-    return <Slot />
+    return (
+    <CartProvider>
+      <Slot />
+    </CartProvider>
+  );
 }

@@ -5,22 +5,11 @@ import icons from "@/constants/icons";
 import { useGlobalContext } from "@/lib/global-provider";
 import { FlatList, Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { getGreeting } from "@/utils";
 
 export default function Index() {
 
   const {user} = useGlobalContext();
-
-  const getGreeting = () => {
-  const hour = new Date().getHours();
-  
-    if (hour < 12) {
-      return 'Good Morning';
-    } else if (hour < 18) {
-      return 'Good Afternoon';
-    } else {
-      return 'Good Evening';
-    }
-  };
 
   return (
     <SafeAreaView className="mx-6 mt-6">

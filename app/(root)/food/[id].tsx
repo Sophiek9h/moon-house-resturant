@@ -4,10 +4,14 @@ import { useLocalSearchParams, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { menueItems } from '@/constants/data';
 import icons from '@/constants/icons';
+import { useCart } from "@/lib/cart-provider";
+
 
 const FoodDetails = () => {
   const { id, title, description, price, category, time, rating} = useLocalSearchParams();
   
+  const { addToCart } = useCart();
+
   // Find the full item from your data
   const item = menueItems.find(menu => menu.title === id);
 
@@ -139,6 +143,12 @@ const FoodDetails = () => {
             <TouchableOpacity 
               className="w-full bg-primaryRed rounded-full px-4 py-4 justify-center items-center mt-9 mb-10"
               activeOpacity={0.8}
+              onPress={() => {
+                  if (item) {
+                    addToCart(item, quantity);
+                    router.push("/cart"); // 👈 navigates to cart.tsx
+                  }
+                }}
             >
               <View className='flex flex-row justify-center items-center gap-3'>
                 <Image
