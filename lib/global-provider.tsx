@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
-import { auth } from "../firebaseConfig";
-import { signInWithCredential, GoogleAuthProvider, onAuthStateChanged, signOut, User } from "firebase/auth";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { GoogleAuthProvider, onAuthStateChanged, signInWithCredential, signOut, User } from "firebase/auth";
+import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { auth } from "@/lib";
 
 WebBrowser.maybeCompleteAuthSession();
 

@@ -2,7 +2,7 @@ import { Cards, PopularCards } from "@/components/Cards";
 import FoodCategory from "@/components/FoodCategory";
 import { menueItems } from "@/constants/data";
 import icons from "@/constants/icons";
-import { useGlobalContext } from "@/lib/global-provider";
+import { useGlobalContext } from "@/lib";
 import { FlatList, Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getGreeting } from "@/utils";

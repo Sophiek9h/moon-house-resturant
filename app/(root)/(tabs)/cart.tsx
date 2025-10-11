@@ -1,11 +1,11 @@
 import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useCart } from "@/lib/cart-provider";
+import { useCart } from "@/lib";
 
 export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
 
-  // 👇 This gives the full cart total (used at the bottom if needed)
+  // 👇 This gives the full cart total 
   const getCartTotal = () => {
     return cartItems
       .reduce((total, item) => {

@@ -4,7 +4,7 @@ import { useLocalSearchParams, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { menueItems } from '@/constants/data';
 import icons from '@/constants/icons';
-import { useCart } from "@/lib/cart-provider";
+import { useCart } from "@/lib";
 
 
 const FoodDetails = () => {
